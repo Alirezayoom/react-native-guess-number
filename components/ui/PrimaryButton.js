@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   buttonText: {
+    fontFamily: "poppins",
     color: "white",
     textAlign: "center",
   },

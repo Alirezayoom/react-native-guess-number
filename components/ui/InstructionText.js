@@ -7,7 +7,7 @@ function InstructionText({ children, style }) {
 const styles = StyleSheet.create({
   instructionText: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontFamily: "poppins-bold",
     color: "#333",
   },
 });
