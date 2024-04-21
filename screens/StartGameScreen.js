@@ -21,7 +21,7 @@ function StartGameScreen({ onSelectNumber }) {
       return;
     }
 
-    onSelectNumber(enteredNumber);
+    onSelectNumber(chosenNumber);
   };
 
   return (
