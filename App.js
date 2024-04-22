@@ -37,7 +37,10 @@ export default function App() {
     screen = (
       <GameScreen
         userNumber={selectedNumber}
-        onGameOver={() => setGameIsOver(true)}
+        onGameOver={(numberOfRounds) => {
+          setGameIsOver(true);
+          setGuessRounds(numberOfRounds);
+        }}
       />
     );
   }
