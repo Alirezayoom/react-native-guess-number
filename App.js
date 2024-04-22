@@ -10,6 +10,7 @@ import AppLoading from "expo-app-loading";
 export default function App() {
   const [selectedNumber, setSelectedNumber] = useState();
   const [gameIsOver, setGameIsOver] = useState(true);
+  const [guessRounds, setGuessRounds] = useState(0);
 
   const [fontsLoaded] = useFonts({
     poppins: require("./assets/fonts/Poppins-Regular.ttf"),
@@ -25,6 +26,11 @@ export default function App() {
     setGameIsOver(false);
   };
 
+  const startNewGameHandler = () => {
+    setSelectedNumber(null);
+    setGuessRounds(0);
+  };
+
   let screen = <StartGameScreen onSelectNumber={selectedNumberHandler} />;
 
   if (selectedNumber) {
@@ -37,7 +43,13 @@ export default function App() {
   }
 
   if (gameIsOver && selectedNumber) {
-    screen = <GameOverScreen />;
+    screen = (
+      <GameOverScreen
+        userNumber={selectedNumber}
+        roundsNumber={guessRounds}
+        onStartNewGame={startNewGameHandler}
+      />
+    );
   }
 
   return (
