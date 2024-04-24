@@ -26,12 +26,16 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   buttonInnerContainer: {
-    padding: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
   },
   buttonText: {
     fontFamily: "poppins",
+    textAlignVertical: "center",
     color: "white",
     textAlign: "center",
+    textAlignVertical: "center",
+    lineHeight: 20,
   },
   pressed: {
     opacity: 0.75,

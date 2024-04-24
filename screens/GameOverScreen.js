@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import Title from "../components/ui/Title";
 import PrimaryButton from "../components/ui/PrimaryButton";
 
@@ -19,6 +19,8 @@ function GameOverScreen({ roundsNumber, userNumber, onStartNewGame }) {
   );
 }
 
+const deviceWidth = Dimensions.get("window").width;
+
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
@@ -27,7 +29,7 @@ const styles = StyleSheet.create({
   },
   textSummary: {
     fontFamily: "poppins",
-    fontSize: 24,
+    fontSize: deviceWidth < 375 ? 20 : 24,
     textAlign: "center",
     marginBottom: 24,
   },
