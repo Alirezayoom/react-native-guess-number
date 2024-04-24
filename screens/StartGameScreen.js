@@ -6,6 +6,7 @@ import {
   useWindowDimensions,
   ScrollView,
   KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import { useState } from "react";
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 32,
     borderBottomColor: "#333",
-    borderBottomWidth: 2,
+    borderBottomWidth: Platform.select({ android: 2, ios: 0 }),
     marginBottom: 8,
   },
   buttonsContainer: {
